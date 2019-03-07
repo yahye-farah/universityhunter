@@ -93,7 +93,7 @@ class MediaControlCard extends Component {
           </div>
           <CardMedia
             className={classes.cover}
-            image={require("https://admreg.yu.edu.jo/en/images/stories/yu_langcenter01.jpg")}
+            image={require("../../images/jordan.png")}
             title="Yarmouk University"
           />
         </Card>

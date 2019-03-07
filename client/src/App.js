@@ -74,7 +74,7 @@ class App extends Component {
   //fetch all courses
   allCourses = () => {
     console.log('hey')
-    axios.get("http://localhost:5000/course")
+    axios.get("/course")
     .then(data => {
       this.setState({
         courses: data.data
@@ -128,7 +128,7 @@ class App extends Component {
     console.log('valueeee',value)
     console.log('path',countryordepartment)
     if(name === 'countryName') {
-      axios.post(`http://localhost:5000/course/${countryordepartment}`,{countryName: value})
+      axios.post(`/course/${countryordepartment}`,{countryName: value})
       .then(result => {
         this.setState({
           courses: result.data

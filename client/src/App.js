@@ -36,7 +36,7 @@ class App extends Component {
   componentDidMount() {
     //fetch all courses
     axios
-      .get("http://localhost:5000/course")
+      .get("/course")
       .then(data => {
         this.setState({
           courses: data.data
@@ -48,7 +48,7 @@ class App extends Component {
 
       //fetch topDepartments
       axios
-      .get("http://localhost:5000/department")
+      .get("/department")
       .then(data => {
         this.setState({
           topDepartments: data.data
@@ -60,7 +60,7 @@ class App extends Component {
 
       //fetch topCountries
       axios
-      .get("http://localhost:5000/country")
+      .get("/country")
       .then(data => {
         this.setState({
           topCountries: data.data
@@ -87,7 +87,7 @@ class App extends Component {
   //search filters posted Recently OR based on the number of viewers
   postedRecently = (latestorviewed) => {
     console.log(latestorviewed)
-    axios.get(`http://localhost:5000/course/${latestorviewed}`).then(result => {
+    axios.get(`/course/${latestorviewed}`).then(result => {
       this.setState({
         courses:result.data
       })
@@ -101,7 +101,7 @@ class App extends Component {
   GPAfilter = (priceORgpa,first, last) => {
     console.log(first)
     console.log(last)
-    axios.post(`http://localhost:5000/course/${priceORgpa}`,{first:first, last:last})
+    axios.post(`/course/${priceORgpa}`,{first:first, last:last})
     .then(result => {
       this.setState({
         courses:result.data
@@ -114,7 +114,7 @@ class App extends Component {
   // increase number of viewers on specific course
 
   increaseViewers = (id) => {
-    axios.post(`http://localhost:5000/course/increaseviewers`,{id: id})
+    axios.post(`/course/increaseviewers`,{id: id})
     .then(result => {
       console.log(result)
     })
@@ -138,7 +138,7 @@ class App extends Component {
         console.log(err);
       })
     }else {
-      axios.post(`http://localhost:5000/course/${countryordepartment}`,{departmentName: value})
+      axios.post(`/course/${countryordepartment}`,{departmentName: value})
       .then(result => {
         console.log('uuuu',result.data)
         this.setState({

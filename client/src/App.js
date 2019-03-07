@@ -130,7 +130,6 @@ class App extends Component {
     if(name === 'countryName') {
       axios.post(`http://localhost:5000/course/${countryordepartment}`,{countryName: value})
       .then(result => {
-        console.log('jooow',result)
         this.setState({
           courses: result.data
         })

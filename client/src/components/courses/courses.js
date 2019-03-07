@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CourseCard from './coursecard';
+import Loading from '../loading/loading'
 
 class Courses extends Component {
     constructor(props){
@@ -19,7 +20,7 @@ class Courses extends Component {
             )
         }else {
             return (
-            <h6>Loading....</h6>
+            <Loading />
             )
         }
         

@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import FacultExpension from './expensionContent';
+import Loading from '../loading/loading'
 
 const styles = theme => ({
   root: {
@@ -45,7 +44,7 @@ class LocationExpension extends Component {
       )
   }else {
       return (
-      <h6>Loading....</h6>
+      <Loading />
       )
   }
 

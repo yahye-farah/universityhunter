@@ -76,25 +76,6 @@ router.post('/new', (req, res, next) => {
         res.send(err);
     })
     
-
-
-
-
-
-
-
-    // const university = new University({
-    //     _id: new mongoose.Types.ObjectId(),
-    //     universityName: req.body.universityName,
-    //     location: req.body.location
-    // })
-    // university.save().then(result  => {
-    //     res.send(result)
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    //     res.send("Something went wrong");
-    // })
 })
 
 //find all universities based on their location
@@ -126,10 +107,5 @@ router.post('/:universityname', (req, res, next) => {
     })
 })
 
-//get top 5 countries that have highest number of courses
-
-// router.get('/topCountries', (req, res, next) => {
-//     University.find({}).
-// })
 
 module.exports = router;

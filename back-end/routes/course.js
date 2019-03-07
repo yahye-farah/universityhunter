@@ -68,30 +68,6 @@ router.post("/new", (req, res, next) => {
     .catch(err => {
       res.send(err);
     });
-
-  //make new course
-
-  // const course = new Course({
-  //     university: req.body.id,
-  //     courseName: req.body.courseName,
-  //     courseLevel: req.body.courseLevel,
-  //     price: req.body.price,
-  //     GPA: req.body.GPA,
-  //     description: req.body.description,
-  //     postedTime: new Date()
-  // })
-  // course.save().then(course => {
-  //     University.findById({_id:req.body.id}).then((university) => {
-  //         university.courses.push(course._id);
-  //         university.save().then(() => {
-  //             res.send('Successfuly saved course!')
-  //         })
-  //     })
-  // })
-  // .catch(err => {
-  //     console.log(err);
-  //     res.send('Error occured');
-  // })
 });
 
 //get all the courses
@@ -270,11 +246,9 @@ router.post("/countries", (req, res, next) => {
     if(err){
       return err;
     }
-    console.log('jow',course)
-    res.send(course)
-  //  var courses= course.filter(course => course.university.location.countryName === req.body.countryName)
-  //  console.log('...',courses)
-  //  res.send(courses)
+   var courses= course.filter(course => course.university.location.countryName === req.body.countryName)
+   console.log('...',courses)
+   res.send(courses)
   })
     
 });
@@ -303,6 +277,30 @@ router.post("/departmenties", (req, res, next) => {
   })
     
 });
+
+//find courses by it is given university
+
+// router.post("/university", (req, res, next) => {
+//   console.log('departmenties')
+//   console.log('yahya',req.body)
+//   Course.find({}).populate('department').populate({
+//     path:"university",
+//     select:"universityName",
+//     populate:{
+//       path:"location",
+//       select:"countryName"
+//     }
+//   }).exec((err, course) => {
+//     if(err){
+//       return err;
+//     }
+//     console.log('ooo',course)
+//    var courses= course.filter(course => course.department.departmentName === req.body.departmentName)
+//    console.log('...',courses)
+//    res.send(courses)
+//   })
+    
+// });
 
 
 module.exports = router;

@@ -55,7 +55,7 @@ class Search extends Component {
     constructor(){
         super();
     }
-
+   
     render() {
         const { classes } = this.props;
         return (
@@ -64,13 +64,15 @@ class Search extends Component {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              onChange={this.props.handleClick}
+              placeholder="Search by University Name"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
             />
           </div>
+          
         )
     }
 }

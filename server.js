@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 const port = process.env.PORT || 5000;
 
-mongoose.connect("mongodb://gele:y12345@ds125821.mlab.com:25821/bloggerdatabase");
+mongoose.connect("keys.Url");
 const db = mongoose.connection;
 
 db.on('open', () => {

@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const keys = require('./keys')
 
 const app = express();
 app.use(cors());
@@ -10,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 const port = process.env.PORT || 5000;
 
-mongoose.connect("mongodb://gele:y12345@ds125821.mlab.com:25821/bloggerdatabase");
+mongoose.connect(keys.Url);
 const db = mongoose.connection;
 
 db.on('open', () => {

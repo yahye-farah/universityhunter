@@ -33,8 +33,6 @@ router.post("/new", (req, res, next) => {
             console.log(err);
           });
       } else {
-        console.log("jjjjjjjjj");
-        console.log(req.body.departmentName)
         //if the department doest exist
         const department = new Depart({
           _id: new mongoose.Types.ObjectId(),
@@ -82,7 +80,6 @@ router.get("", (req, res, next) => {
         select:"countryName"
       }
     })
-    .limit(5)
     .then(result => {
       res.send(result);
     })

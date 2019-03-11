@@ -87,13 +87,14 @@ class PrimarySearchAppBar extends React.Component {
   };
 
   handleClick = (e) => {
+    e.preventDefault()
     this.setState({
       value: e.target.value
     })
   }
 
   search = () => {
-    console.log(this.state.value)
+    this.props.filter(this.state.value)
   }
 
 

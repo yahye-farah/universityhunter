@@ -11,6 +11,8 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import { Divider } from "@material-ui/core";
 
 const styles = theme => ({
   card: {
@@ -24,7 +26,9 @@ const styles = theme => ({
     flex: "1 0 auto"
   },
   cover: {
-    width: 300,
+    height: 200,
+    maxWidth: 300, 
+    maxHeight:300,
     display: "fluid"
   },
   controls: {
@@ -64,8 +68,12 @@ class MediaControlCard extends Component {
     const { classes, theme } = this.props;
     const course = this.props.course;
     return (
-      <Paper className={classes.paper}>
+      <div>
+      <Grid>
+        <Grid></Grid>
+        <Grid>
         <Card className={classes.card}>
+        <Paper className={classes.paper}>
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
@@ -91,13 +99,21 @@ class MediaControlCard extends Component {
               </ExpansionPanelDetails>
             </ExpansionPanel>
           </div>
-          <CardMedia
-            className={classes.cover}
-            image={require("../../images/jordan.png")}
-            title="Yarmouk University"
-          />
+          </Paper>
+          <Paper className={classes.paper}>
+           
+          <img
+          className={classes.cover}
+            src={require("../../images/jordan.png")}
+           
+          /> 
+          </Paper>
         </Card>
-      </Paper>
+        </Grid>
+        </Grid>
+        
+        <Divider></Divider>
+        </div>
     );
   }
 }
